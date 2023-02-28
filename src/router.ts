@@ -3,6 +3,7 @@ import { Router } from 'express';
 import multer from 'multer';
 
 import { sendText } from './app/useCases/sendText';
+import { leaveGroup } from './app/useCases/leaveGroup';
 
 export const router = Router();
 
@@ -17,5 +18,8 @@ const upload = multer({
     }),
 });
 
-// send Simple Text
+// Send Simple Text
 router.post('/sendText', sendText);
+
+// Leave a Group
+router.post('/leaveGroup', leaveGroup);
